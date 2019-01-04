@@ -2,7 +2,7 @@
 
 To clone the repository:
 
-```git clone https://github.com/Curtis/MyDots
+`git clone https://github.com/Curtis/MyDots`
 
 and then run the following to symlink in home directory:
 
