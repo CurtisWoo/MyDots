@@ -10,7 +10,7 @@ alias ll='ls -l'
 alias la='ls -la'
 alias ..='cd .. && ls'
 alias ...='cd ../.. && ls'
-alias gop='cd /home/curtis/go/src && ls'
+alias gop='cd /home/curtis/go/src/github.com/CurtisWoo && ls'
 
 export GOPATH=/home/curtis/go
 export GOBIN=/home/curtis/go/bin
