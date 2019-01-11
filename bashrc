@@ -11,6 +11,7 @@ alias la='ls -la'
 alias ..='cd .. && ls'
 alias ...='cd ../.. && ls'
 alias gop='cd /home/curtis/go/src/github.com/CurtisWoo && ls'
+alias his='history | tail'
 
 export GOPATH=/home/curtis/go
 export GOBIN=/home/curtis/go/bin
