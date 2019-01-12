@@ -55,4 +55,4 @@ set showcmd
 set hlsearch
 
 "Access godoc in vim
-command! -nargs=* -complete=shellcmd G new | setlocal buftype=nofile bufhidden=hide noswapfile | r !godoc <args>
+command! -nargs=* -complete=shellcmd G new | setlocal buftype=nofile bufhidden=hide noswapfile | r !go doc <args>
