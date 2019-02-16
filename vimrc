@@ -23,6 +23,7 @@ inoremap <esc> <nop>
 let mapleader="-"
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>c I//
 nnoremap <f2> :Explore<cr>
 nnoremap <f3> :set hls!<cr>
 
