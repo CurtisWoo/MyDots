@@ -26,6 +26,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>c I//
 nnoremap <f2> :Explore<cr>
 nnoremap <f3> :set hls!<cr>
+nnoremap <leader>html :read $HOME/MyDots/templates/template.html<cr>6jwf>a
 
 "Navigating splits
 nnoremap <C-H> <C-W><C-H>
