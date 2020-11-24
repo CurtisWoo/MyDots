@@ -3,7 +3,7 @@ if has ("syntax")
     syntax on
 endif
 
-colorscheme koehler
+colorscheme smyck
 
 if version >= 700
     highlight statusLine cterm=bold ctermfg=16 ctermbg=57
@@ -18,15 +18,20 @@ call matchadd('ColorColumn', '\%79v', 100)
 "Reassignments
 inoremap kj <esc>
 inoremap <esc> <nop>
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
 
 "Shortcuts
 let mapleader="-"
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>c I//
+nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<cr>
 nnoremap <f2> :Explore<cr>
 nnoremap <f3> :set hls!<cr>
-nnoremap <leader>html :read $HOME/MyDots/templates/template.html<cr>6jwf>a
+nnoremap <leader>html :-1read $HOME/MyDots/templates/template.html<cr>6jwf>a
 
 "Navigating splits
 nnoremap <C-H> <C-W><C-H>
@@ -49,12 +54,32 @@ set textwidth=0
 set smartindent
 set undolevels=20
 set wrapmargin=0
+set nowrap
 set ignorecase
 set smartcase
 set incsearch
 set showmatch
 set showcmd
 set hlsearch
+filetype indent on
+
+"For govim
+set nocompatible
+set nobackup
+set nowritebackup
+set noswapfile
+
+filetype plugin on
+
+set mouse=a
+set ttymouse=sgr
+set updatetime=500
+set balloondelay=250
+set signcolumn=yes
+autocmd! BufEnter,BufNewFile *.go syntax on
+autocmd! BufLeave *.go syntax off
+set backspace=2
+
 
 "Access godoc in vim
 command! -nargs=* -complete=shellcmd G new | setlocal buftype=nofile bufhidden=hide noswapfile | r !go doc <args>
