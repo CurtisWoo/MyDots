@@ -1,14 +1,15 @@
-"Cosmetic configurations
+﻿"Cosmetic configurations
 if has ("syntax")
     syntax on
 endif
 
+
 colorscheme smyck
 
 if version >= 700
-    highlight statusLine cterm=bold ctermfg=16 ctermbg=57
+    highlight statusLine cterm=bold ctermfg=15 ctermbg=8
     au InsertEnter * hi StatusLine cterm=bold ctermfg=231 ctermbg=196
-    au InsertLeave * hi StatusLine cterm=bold ctermfg=16 ctermbg=57
+    au InsertLeave * hi StatusLine cterm=bold ctermfg=15 ctermbg=8
 endif
 
 "Highlight column when line length reaches the 80th character
@@ -18,20 +19,24 @@ call matchadd('ColorColumn', '\%79v', 100)
 "Reassignments
 inoremap kj <esc>
 inoremap <esc> <nop>
-inoremap ( ()<Left>
-inoremap { {}<Left>
-inoremap [ []<Left>
 
 "Shortcuts
 let mapleader="-"
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>c I//
+nnoremap <leader>h :call GOVIMHover()<cr>
 nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
-nnoremap <f2> :Explore<cr>
-nnoremap <f3> :set hls!<cr>
+nnoremap <f2> :vs <Bar> :Explore<cr>
 nnoremap <leader>html :-1read $HOME/MyDots/templates/template.html<cr>6jwf>a
+nnoremap J mzJ`z
+
+"Improve search
+"nnoremap <f3> :set hls!<cr> same as below but old version
+map <F3> :set hls!<Bar>set hls?<CR>
+nnoremap n nzz
+nnoremap N Nzz
 
 "Navigating splits
 nnoremap <C-H> <C-W><C-H>
@@ -40,10 +45,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
 "Set configuration
-set background=dark
 set encoding=utf-8
 set visualbell
 set relativenumber
+set number
 set laststatus=2
 set autoindent
 set expandtab
@@ -60,7 +65,8 @@ set smartcase
 set incsearch
 set showmatch
 set showcmd
-set hlsearch
+set bomb
+set cursorline
 filetype indent on
 
 "For govim
@@ -83,3 +89,6 @@ set backspace=2
 
 "Access godoc in vim
 command! -nargs=* -complete=shellcmd G new | setlocal buftype=nofile bufhidden=hide noswapfile | r !go doc <args>
+
+"For text and documents.
+autocmd BufRead,BufNewFile *.txt set textwidth=80

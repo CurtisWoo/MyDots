@@ -36,3 +36,6 @@ export PATH=$PATH:/usr/local/go/bin:$GOBIN
 #prompt configuration
 source /home/curtis/.git-prompt.sh
 PS1='\u@\h \[\033[38;5;214m\]\w\[\033[1;38;5;226m\]$(__git_ps1 "(%s)")\[\033[0m\] $ '
+
+#ignore duplicates
+HISTCONTROL=ignoreboth:erasedups
