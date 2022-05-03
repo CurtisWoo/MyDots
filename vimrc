@@ -28,7 +28,7 @@ nnoremap <leader>c I//
 nnoremap <leader>h :call GOVIMHover()<cr>
 nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
-nnoremap <f2> :vs <Bar> :Explore<cr>
+nnoremap <f2> :sp <Bar> :Explore<cr>
 nnoremap <leader>html :-1read $HOME/MyDots/templates/template.html<cr>6jwf>a
 nnoremap J mzJ`z
 

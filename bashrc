@@ -9,9 +9,9 @@
 LS_COLORS="di=01;33"
 
 #aliases
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -la'
+alias ls='ls -X --color=auto'
+alias ll='ls -Xl'
+alias la='ls -Xla'
 alias ..='cd .. && ls'
 alias ...='cd ../.. && ls'
 alias his='history | tail'
